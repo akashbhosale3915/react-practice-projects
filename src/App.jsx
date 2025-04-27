@@ -1,8 +1,10 @@
+import FileTree from "./components/FileTree";
 import Kanban from "./components/Kanban";
 import Otp from "./components/Otp";
 import Theme from "./components/Theme";
 import Todo from "./components/Todo";
 import ThemeProvider from "./context/ThemeContext";
+import { fileTreeData } from "./data/fileTreeData";
 const App = () => {
   return (
     <>
@@ -11,7 +13,8 @@ const App = () => {
       {/* <ThemeProvider>
         <Theme />
       </ThemeProvider> */}
-      <Todo />
+      {/* <Todo /> */}
+      <FileTree item={fileTreeData} />
     </>
   );
 };
