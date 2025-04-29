@@ -58,7 +58,6 @@ const FileUpload = () => {
         ]);
       }
       const result = await response.json();
-      console.log(result);
       if (result?.location) {
         setUploadLocation(result.location);
       }
