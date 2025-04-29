@@ -1,3 +1,4 @@
+import DebounceSearch from "./components/DebounceSearch";
 import FileTree from "./components/FileTree";
 import FileUpload from "./components/FileUpload";
 import Kanban from "./components/Kanban";
@@ -16,7 +17,8 @@ const App = () => {
       <Otp />
       <Todo /> */}
       {/* <FileTree item={fileTreeData} /> */}
-      <FileUpload />
+      {/* <FileUpload /> */}
+      <DebounceSearch />
     </>
   );
 };
