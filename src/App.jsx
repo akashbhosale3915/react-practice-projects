@@ -2,6 +2,7 @@ import DebounceSearch from "./components/DebounceSearch";
 import FileTree from "./components/FileTree";
 import FileUpload from "./components/FileUpload";
 import Kanban from "./components/Kanban";
+import MultiStepForm from "./components/MultiStepForm";
 import Otp from "./components/Otp";
 import Pagination from "./components/Pagination";
 import Theme from "./components/Theme";
@@ -22,7 +23,8 @@ const App = () => {
       {/* <FileUpload /> */}
       {/* <DebounceSearch /> */}
       {/* <TicTacToe /> */}
-      <Pagination />
+      {/* <Pagination /> */}
+      <MultiStepForm />
     </>
   );
 };
