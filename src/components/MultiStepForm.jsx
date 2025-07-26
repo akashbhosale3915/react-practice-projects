@@ -91,13 +91,7 @@ const MultiStepForm = () => {
           onSubmit={handleSubmit}
         >
           {form[currentStep].fields.map(
-            ({
-              name,
-              label,
-              type,
-              placeholder,
-              validation,
-            }) => (
+            ({ name, label, type, placeholder }) => (
               <div
                 className="flex flex-col gap-2"
                 key={name}
@@ -110,6 +104,7 @@ const MultiStepForm = () => {
                   className="border border-gray-300 rounded-md p-2"
                   value={formData[name]}
                   onChange={(e) => handleFormChange(e)}
+                  autoComplete="off"
                 />
               </div>
             )

@@ -7,10 +7,42 @@ import Otp from "./components/Otp";
 import Pagination from "./components/Pagination";
 import Theme from "./components/Theme";
 import TicTacToe from "./components/TicTacToe";
+import Toastify from "./components/Toastify";
 import Todo from "./components/Todo";
 import ThemeProvider from "./context/ThemeContext";
 import { fileTreeData } from "./data/fileTreeData";
+import { useToast } from "./hooks/useToast";
+
 const App = () => {
+  const { addToast, positions, types } = useToast();
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/todos/1"
+      );
+      if (!response.ok) {
+        addToast({
+          type: types.error,
+          text: "Failed to Fetch",
+          position: positions.topRight,
+        });
+      }
+      const json = await response.json();
+      if (json) {
+        addToast({
+          text: "Data fetched successfully",
+          type: types.success,
+          position: positions.topRight,
+        });
+      }
+    } catch (e) {
+      addToast({
+        type: types.error,
+        text: "Failed to Fetch",
+        position: positions.topRight,
+      });
+    }
+  };
   return (
     <>
       {/* <ThemeProvider>
@@ -24,7 +56,9 @@ const App = () => {
       {/* <DebounceSearch /> */}
       {/* <TicTacToe /> */}
       {/* <Pagination /> */}
-      <MultiStepForm />
+      {/* <MultiStepForm /> */}
+      <button onClick={fetchData}>Fetch</button>
+      <Toastify />
     </>
   );
 };
